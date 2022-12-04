@@ -1,0 +1,35 @@
+<a routerLink="">Home</a>
+<form [formGroup]="addProductForm" class="mx-auto mt-3" style="width: 50%;">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="title" formControlName="title" placeholder="title">
+        <label for="title">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="price" formControlName="price" placeholder="price">
+        <label for="price">Price</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="description" formControlName="description" placeholder="description">
+        <label for="description">Description</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="image" formControlName="image" placeholder="image">
+        <label for="image">Image Link</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="category" formControlName="category" placeholder="category">
+        <label for="category">Category</label>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addProduct()" [disabled]="!addProductForm.valid">Add Product</button>
+</form>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="addProductToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Product added successfully!
+    </div>
+  </div>
+</div>
